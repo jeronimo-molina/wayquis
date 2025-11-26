@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Wayquis - Notes from Obsidian to Blog
 
-## Getting Started
+A minimalist "Digital Garden" starter kit built with **Next.js**, **Tailwind CSS**, and **Obsidian**.
 
-First, run the development server:
+This project allows you to publish your Obsidian notes directly to the web. It is designed to be a "set it and forget it" solution: write locally, push to GitHub, and your site updates automatically.
+
+## 🚀 Features
+
+- **Obsidian First:** Write in Markdown, keep your wikilinks logic.
+- **Git-Based CMS:** No database needed. Your file system is your database.
+- **Dark Mode Native:** Styled with a "Terminal/Hacker" aesthetic using Tailwind CSS.
+- **Privacy Focused:** The `content/` folder is ignored by default in the repo structure, allowing you to share the code without sharing your private notes (unless you want to).
+
+## 🛠️ How to Use (The Workflow)
+
+### 1. Setup
+Clone this repository and install dependencies:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Writing Content
+This starter kit looks for Markdown files inside the content/ folder.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open your Obsidian vault or file explorer.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Drag and drop your .md notes into the content/ folder of this project.
 
-## Learn More
+Crucial: Ensure your notes have the required Frontmatter at the top:
 
-To learn more about Next.js, take a look at the following resources:
+```YAML
+---
+title: "My Note Title"
+date: "2024-03-20"
+---
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Publishing
+To publish your changes, simply commit and push to GitHub. If you have connected this repo to a service like Render or Vercel, it will auto-deploy.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```Bash
+git add .
+git commit -m "New notes added"
+git push origin main
+```
 
-## Deploy on Vercel
+📦 Tech Stack
+Next.js (App Router)
+Tailwind CSS
+Gray-Matter (Markdown parsing)
+Remark (HTML serialization)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Created by [Jeronimo Molina](https://wayquis.com.br)

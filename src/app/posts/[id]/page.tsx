@@ -3,10 +3,10 @@ import { get } from "http";
 
 export default async function Post({ params }: { params: Promise<{ id: string }> }) {
   
-  // 1. Esperamos os parâmetros serem resolvidos
+  // 1. Here params are be solved
   const { id } = await params;
 
-  // 2. Agora usamos o 'id' que extraímos acima (e não mais params.id direto)
+  // 2. Here we use 'id' to extract above (not params.id directly) 
   const postData = await getPostData(id);
 
   return (
@@ -14,7 +14,7 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
       <h1 className="text-3xl font-bold mb-4">{postData.title}</h1>
       <div className="text-gray-500 mb-8">{postData.date}</div>
       
-      {/* Aqui está a mágica do HTML */}
+      {/* Here are HTML magic */}
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
     </main>
   );
