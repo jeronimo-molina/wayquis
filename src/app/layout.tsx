@@ -3,8 +3,8 @@ import "./globals.css";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terminal Blog",
-  description: "Notas do Obsidian",
+  title: "Wayquis",
+  description: "Jeronimo Molina's Digital Garden powered by Next.js and Obsidian",
 };
 
 export default function RootLayout({
